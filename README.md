@@ -1,0 +1,2 @@
+# deneme
+ders not uygulaması
