@@ -43,3 +43,5 @@ int() tam sayıya çevirici
 str() string yani metinsel ifadeye çevirir
 float() ondalık sayıya çevirir 
 complex() karmaşık sayıya çevirir.
+
+eval() fonksiyonu kendisine verilen karakter dizelerini değerlendirmeye tabi tutar.
