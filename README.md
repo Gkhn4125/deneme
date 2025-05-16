@@ -45,4 +45,4 @@ float() ondalık sayıya çevirir
 complex() karmaşık sayıya çevirir.
 
 eval() fonksiyonu kendisine verilen karakter dizelerini değerlendirmeye tabi tutar. 
-Not : eval() fonksiyonu basit olmasına karşın bir o kadar da tehlikelidir.icerisine python çalıştırma komutları da yasilanilir ve buda cok ciddi zararlara yol açabilir.
+Not : eval() fonksiyonu basit olmasına karşın bir o kadar da tehlikelidir.icerisine python çalıştırma komutları da yasilanilir ve buda cok ciddi zararlara yol açabilir. Boyle bir durumla karşılaşmamak için eval () fonksiyonundan once kontrol mekanizması kullanılmalidir.
