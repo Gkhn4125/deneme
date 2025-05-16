@@ -1,6 +1,7 @@
 # deneme
 ###### Python notlarım ####
-print Fonksiyonları
+
+PRİNT FONKSİYONLARI
 
 print("wwww",".","gokhanaltay",".","com",sep="") #sep parametresi aralardaki bosluklara etki eder.
 print("Pardus ve Ubuntu birer Linux dağılımıdır",end="...")#end parametresi sonuna etki eder.
@@ -22,3 +23,15 @@ Soy isim :  ALTAY
 Yaş :  37
 şehir :  Kocaeli
 Meslek :  Formen
+
+print(*"TBMM",sep=".")#Yıldızlı parametreler Çıktının T.B.M.M şeklinde vermesini sağlar.
+print(*"GALATASARAY",sep="-")  G-A-L-A-T-A-S-A-R-A-Y şeklinde çıktı vermeye yarar.
+
+Örnekler : 
+baslik = "Türkiye'de Özgür Yazılımın Geçmişi"
+print(baslik,"\n","-"*len(baslik),sep="")
+Çıktısı  su şekilde olur:
+Türkiye'de Özgür Yazılımın Geçmişi
+----------------------------------
+
+
