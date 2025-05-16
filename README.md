@@ -33,5 +33,5 @@ print(baslik,"\n","-"*len(baslik),sep="")
 Çıktısı  su şekilde olur:
 Türkiye'de Özgür Yazılımın Geçmişi
 ----------------------------------
-
+print(r"C:\yeniklasor\dosya.txt")  # Kaçış karakterleri işlenmez
 
