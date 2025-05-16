@@ -35,3 +35,6 @@ Türkiye'de Özgür Yazılımın Geçmişi
 ----------------------------------
 print(r"C:\yeniklasor\dosya.txt")  # Kaçış karakterleri işlenmez
 
+input () kullanıcıdan bir veri girmesini sağlar unutma kullanıcının girdiği her verinin tipi str yani metinseldir.
+
+eğer aritmetik işlem yapacaksak tür dönüşümüne gideriz. int(input("Bir değer giriniz: " ) gibi
