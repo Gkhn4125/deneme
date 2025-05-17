@@ -34,15 +34,10 @@ Türkiye'de Özgür Yazılımın Geçmişi
 ----------------------------------
 print(r"C:\yeniklasor\dosya.txt")  # Kaçış karakterleri işlenmez
 
+##########################################################################################################################################################################################################################
+VERİ TÜRLERİ
 input () kullanıcıdan bir veri girmesini sağlar unutma kullanıcının girdiği her verinin tipi str yani metinseldir.
-
 eğer aritmetik işlem yapacaksak tür dönüşümüne gideriz. int(input("Bir değer giriniz: " ) gibi
-
-int() tam sayıya çevirici 
-str() string yani metinsel ifadeye çevirir
-float() ondalık sayıya çevirir 
-complex() karmaşık sayıya çevirir.
-
 eval() fonksiyonu kendisine verilen karakter dizelerini değerlendirmeye tabi tutar. 
 Not : eval() fonksiyonu basit olmasına karşın bir o kadar da tehlikelidir.icerisine python çalıştırma komutları da yasilanilir ve buda cok ciddi zararlara yol açabilir. Boyle bir durumla karşılaşmamak için eval () fonksiyonundan once kontrol mekanizması kullanılmalidir.
 
@@ -62,7 +57,7 @@ if n > 10: # if de her zaman girinti önemlidir. Yoksa kod hata verir.
     print("sayı 10'dan büyüktür!")
 
 Konu hakkında örnek:
-
+---------------------
 kullanıcı_adı = input("Kullanıcı adınız: ")
 parola = input("Parolanız : ")
 toplam_uzunluk = len(kullanıcı_adı) + len(parola) #len burada içine yazılan değerin uzunluğunu verir.
@@ -73,4 +68,23 @@ if toplam_uzunluk > 40:
 "toplam uzunluğu 40 karakteri geçmemeli!")
 else:
     print("Sisteme hoşgeldiniz!")
-    
+
+##########################################################################################################################################################################################################################
+TÜR DÖNÜŞÜMLERİ
+
+Bir değerin veri tipini değiştirme işleminin adıdır.
+Metinsel ifadeler tam sayıya dönüşemez.
+
+ÖRn: 
+-----
+x = "7"
+y= int(x) #burada stringi int veri tipine dönüştürdük. Metinsel ifadeler sayı şeklinde olursa sayısal veri tipine dönüşebilir. "7" gibi.
+
+x = int(True) bool veri tipleri False 0 a True de 1 e dönüşür. Burada sonuc 1 çıkar.
+
+x = float(6) # burada x 6.0 a dönüşür bunun tam tersi olacaksa float int dönecekse oda üste ve ya alta yuvarlar. 6.70 i 7 yapar 6.30 ise 6 yapar.
+
+x= str(7) # Burada sonuc "7" dir.
+
+complex() karmaşık sayıya çevirir.Tersinde ise hata verir complex int yada floata dönüştürülemez.
+
