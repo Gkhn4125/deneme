@@ -52,4 +52,4 @@ dict {"key":"value"} değerleri alir veri eşleştirme ve hızlı erişim için 
 tuple() demet yapısı olarak değişmesini istemediğiz değerleri içine alır.
 
 set{} küme yapısıdır benzer olanlari ayiklar 
-örnek bu listede olan iki aynı elemanları ayiklar.
+örnek bir listede olan iki aynı elemanları ayiklar.
