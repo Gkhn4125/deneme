@@ -53,3 +53,23 @@ tuple() demet yapısı olarak değişmesini istemediğiz değerleri içine alır
 
 set{} küme yapısıdır benzer olanlari ayiklar 
 örnek bir listede olan iki aynı elemanları ayiklar.
+
+##########################################################################################################################################################################################################################
+KOŞUL DEYİMLERİ
+if elif else komutları 
+
+if n > 10: # if de her zaman girinti önemlidir. Yoksa kod hata verir.
+    print("sayı 10'dan büyüktür!")
+
+    Konu hakkında örnek:
+kullanıcı_adı = input("Kullanıcı adınız: ")
+parola = input("Parolanız : ")
+toplam_uzunluk = len(kullanıcı_adı) + len(parola) #len burada içine yazılan değerin uzunluğunu verir.
+mesaj = "Kullanıcı adı ve parolanız toplam {} karakterden oluşuyor!"
+print(mesaj.format(toplam_uzunluk))
+if toplam_uzunluk > 40:
+    print("Kullanıcı adınız ile parolanızın ",
+"toplam uzunluğu 40 karakteri geçmemeli!")
+else:
+    print("Sisteme hoşgeldiniz!")
+    
