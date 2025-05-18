@@ -111,9 +111,26 @@ print(random.random())# Burada sonucu kopyladığımız sayıyı yazacak.
 0.8599657178550767
 0.9681039372419769
 0.9681039372419769
-
+------------------------------------------------------------------------------------------------------------------------------
 print(random.getrandbits(8)) # 8 bitlik rastgele sayı üretir.
 print(random.randrange(1,10,2))# 0 dan 9 a kadar rastgele sayı üretir 3. parametre olarak da atlama aralığını belirtir.
 print(random.randint(1,10))# 1 den 9  a kadar rastgele sayı üretir.
+------------------------------------------------------------------------------------------------------------------------------
+my_list = ["Elma","armut",7,-5,45.5,"portakal"]
+x = "deneme"
+print(random.choice(my_list)) # içerisine verilen veriden rastgele değer döndürür. liste ve string verilerde dekullanılabilir.
+print(random.choice(x))
 
-
+my_list = ["Elma","armut","üzüm","portakal"]
+print(random.choices(my_list,weights=[10,1,1,1],k=15)) # liste mi al ve weights içine yazılan değerlere göre ağırlık ve 15 kere yazdır.
+Çıktısı :
+['Elma', 'portakal', 'Elma', 'Elma', 'Elma', 'Elma', 'Elma', 'Elma', 'Elma', 'Elma', 'Elma', 'Elma', 'Elma', 'Elma', 'Elma']
+------------------------------------------------------------------------------------------------------------------------------
+My_car = ["Renault","Bmw","Citroen","Mercedes"]
+random.shuffle(My_car) #Listemizi rastgele kasrıştırdık. 
+print(My_car)
+------------------------------------------------------------------------------------------------------------------------------
+print(random.sample(My_car,k=2))# listeden Rastgele 2 değer verir. Listenin elemanı kadar değer verilir.
+print(random.random())# 0 ile 1 arası rastgele sayı üretir.
+print(random.uniform(30,80)) # içerisine verilen değerler arasında ondalıklı sayı vermesini istedik
+print(random.triangular(10,70,25))# değerler arası ondalık sayı verir farkı 3. yazılan parmetreyibaz alarak ona yakın değerler verir.
