@@ -87,4 +87,33 @@ x = float(6) # burada x 6.0 a dönüşür bunun tam tersi olacaksa float int dö
 x= str(7) # Burada sonuc "7" dir.
 
 complex() karmaşık sayıya çevirir.Tersinde ise hata verir complex int yada floata dönüştürülemez.
+##################################################################################################################################################################
+Random Modülü 
+Rastgele sayılarla işlem yapmak için kullanılır . Kullanmak için import etmemiz gerekmektedir.
+
+import random # Random modülünü kullanamak için import yapmamız gerekli.
+random.seed(7) # Tekrarlabilir rastgele sayıları almak için kullanılır.
+print(random.random()) 
+print(random.random()) 
+Yukarıda durumda sonuç Her zaman aşağıdaki gibi aynı değerleri döndürür.
+0.32383276483316237
+0.15084917392450192
+
+Randomda getstate ve setstate kullanımı
+----------------------------------------
+Bu metotlar daha çok test similasyon ve tekrarlanabilir durumlar için kullanılır.
+
+print(random.random()) # Rastgele bir sayı ürettik
+state=random.getstate() # Aşağıdaki üretilecek sayıyı bu komut ile kopyaladık.
+print(random.random()) #  Rastgele bir sayı daha  ürettik ve su an bu sayı hafıza da 
+random.setstate(state) # Hafıza da olan rastgele sayıyı geri yüklemesini söyledik.
+print(random.random())# Burada sonucu kopyladığımız sayıyı yazacak.
+0.8599657178550767
+0.9681039372419769
+0.9681039372419769
+
+print(random.getrandbits(8)) # 8 bitlik rastgele sayı üretir.
+print(random.randrange(1,10,2))# 0 dan 9 a kadar rastgele sayı üretir 3. parametre olarak da atlama aralığını belirtir.
+print(random.randint(1,10))# 1 den 9  a kadar rastgele sayı üretir.
+
 
