@@ -134,3 +134,14 @@ print(random.sample(My_car,k=2))# listeden Rastgele 2 değer verir. Listenin ele
 print(random.random())# 0 ile 1 arası rastgele sayı üretir.
 print(random.uniform(30,80)) # içerisine verilen değerler arasında ondalıklı sayı vermesini istedik
 print(random.triangular(10,70,25))# değerler arası ondalık sayı verir farkı 3. yazılan parmetreyibaz alarak ona yakın değerler verir.
+##################################################################################################################################################################
+STRİNG METOTLARI
+
+Stringler listeler gibi for döngüsüne , dilimleme gibi işlemlere tabi tutulabilirler.
+
+isim = "Gökhan ALTAY"
+my_list = []
+for i in isim:
+    my_list.append(i)
+print(my_list)
+    
