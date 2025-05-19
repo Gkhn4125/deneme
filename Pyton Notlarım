@@ -144,4 +144,17 @@ my_list = []
 for i in isim:
     my_list.append(i)
 print(my_list)
-    
+------------------------------------------------------------------------------------------------------------------------------
+my_string = "Python , Java ve C#  Ögreniyorum"
+print(my_string.upper()) # Bütün harfleri büyük harfe çevirir.
+print(my_string.lower()) # Bütün harfleri küçük harfe çevirir.
+print(my_string.strip()) # Başta ki ve sondaki boşlukları kaldırır.
+print(my_string.replace("P","p")) # İçerik değiştirme işlemini yapar.
+print(my_string.split(",")) # içerisine verdiğin değerden sonrasını ayırır.
+
+PYTHON , JAVA VE C#  ÖGRENIYORUM
+python , java ve c#  ögreniyorum
+Python , Java ve C#  Ögreniyorum
+python , Java ve C#  Ögreniyorum
+['Python ', ' Java ve C#  Ögreniyorum']
+
