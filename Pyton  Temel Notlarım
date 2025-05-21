@@ -157,4 +157,34 @@ python , java ve c#  ögreniyorum
 Python , Java ve C#  Ögreniyorum
 python , Java ve C#  Ögreniyorum
 ['Python ', ' Java ve C#  Ögreniyorum']
+------------------------------------------------------------------------------------------------------------------------------
+Kaçış Dizileri ve 	Anlamı
+\\	Ters eğik çizgi (\)
+\'	Tek tırnak işareti (')
+\"	Çift tırnak işareti (")
+\n	Yeni satır (newline)
+\t	Sekme (tab)
+\r	Satır başı (carriage return)
+\b	Geri alma (backspace)
+\f	Form feed
+\a	Uyarı sesi (bell)
+\v	Dikey sekme
+\ooo	Sekizlik (octal) karakter değeri
+\xhh	Onaltılık (hex) karakter değeri
+\N{name}	Unicode karakter adı
+\uXXXX	16-bit Unicode karakteri
+\UXXXXXXXX	32-bit Unicode karakteri
+------------------------------------------------------------------------------------------------------------------------------
+String Formatlama işlemleri.
 
+name = "Gökhan"
+surname = "ALTAY"
+age = 37
+
+print("Merhaba adım {} soyadım {} yaşım {} dir...".format(name,surname,age))
+
+name = "Gökhan"
+surname = "ALTAY"
+age = 37
+
+print(f"Merhaba adım {name} soyadım {surname} yaşım {age} dir...")
