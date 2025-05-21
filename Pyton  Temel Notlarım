@@ -204,6 +204,7 @@ startswith(sub)	Belirtilen string ile başlayıp başlamadığını kontrol eder
 endswith(sub)	Belirtilen string ile bitip bitmediğini kontrol eder.
 count(sub)	Alt string’in kaç kez geçtiğini sayar.
 🔧 Düzenleme ve Temizleme
+center()Yazıyı ortalamaya yarar iki değer alır (30,"*")
 strip()	Başta ve sondaki boşlukları (veya belirli karakterleri) siler.
 lstrip()	Sadece baştaki boşlukları siler.
 rstrip()	Sadece sondaki boşlukları siler.
