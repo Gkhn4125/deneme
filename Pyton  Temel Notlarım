@@ -188,3 +188,33 @@ surname = "ALTAY"
 age = 37
 
 print(f"Merhaba adım {name} soyadım {surname} yaşım {age} dir...")
+------------------------------------------------------------------------------------------------------------------------------
+String Formatlama işlemleri.
+🔤 Büyük/Küçük Harf Dönüştürme
+upper()	Tüm harfleri büyük harfe çevirir.
+lower()	Tüm harfleri küçük harfe çevirir.
+casfold() Tüm harfleri küçük harfe çevirir. lowerden farkı daha yavaş çalısır daha fazla karakteri destekler.
+capitalize()	İlk harfi büyük, diğerleri küçük yapar.
+title()	Her kelimenin ilk harfini büyük yapar.
+swapcase()	Büyük harfleri küçük, küçük harfleri büyük yapar.
+🔍 Arama ve Sorgulama
+find(sub)	Alt string’in ilk geçtiği index’i döner (bulamazsa -1).
+index(sub)	find gibi ama bulamazsa hata verir.
+startswith(sub)	Belirtilen string ile başlayıp başlamadığını kontrol eder.
+endswith(sub)	Belirtilen string ile bitip bitmediğini kontrol eder.
+count(sub)	Alt string’in kaç kez geçtiğini sayar.
+🔧 Düzenleme ve Temizleme
+strip()	Başta ve sondaki boşlukları (veya belirli karakterleri) siler.
+lstrip()	Sadece baştaki boşlukları siler.
+rstrip()	Sadece sondaki boşlukları siler.
+replace(old, new)	Belirli bir alt string’i yenisiyle değiştirir.
+🔗 Bölme ve Birleştirme
+split(sep)	String’i verilen ayırıcıya göre böler, liste döner.
+rsplit(sep)	Sondan başlayarak böler.
+join(iterable)	Listedeki stringleri belirtilen ayırıcıyla birleştirir.
+🔤 String’in Yapısını Kontrol Etme
+isalpha()	Sadece harflerden oluşuyorsa True döner.
+isdigit()	Sadece rakamlardan oluşuyorsa True.
+isalnum()	Harf veya rakamdan oluşuyorsa True.
+isspace()	Sadece boşluk karakterlerinden oluşuyorsa True.
+islower() / isupper()	Harfler tamamen küçük/büyükse True.
