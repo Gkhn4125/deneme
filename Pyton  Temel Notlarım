@@ -184,14 +184,22 @@ String Formatlama işlemleri.
 name = "Gökhan"
 surname = "ALTAY"
 age = 37
-
 print("Merhaba adım {} soyadım {} yaşım {} dir...".format(name,surname,age))
 
 name = "Gökhan"
 surname = "ALTAY"
 age = 37
-
 print(f"Merhaba adım {name} soyadım {surname} yaşım {age} dir...")
+
+text = "Merhaba adım {name} soyadım {surname} yaşım {age} dir...".format(name = "Gökhan",surname = "Altay",age=38)
+text ="Merhaba adım {0} soyadım {1} yaşım {2} dir...".format("Gökhan","Altay",38)
+text ="Merhaba adım {} soyadım {} yaşım {} dir...".format("Gökhan","Altay",38)
+
+print ("Ben {:<5} kadar  programlama diline hakimim...".format(5)) => Ben 5     kadar  programlama diline hakimim...
+print (" Ben {:>5} kadar  programlama diline hakimim...".format(5))=> Ben     5 kadar  programlama diline hakimim...
+print ("Ben {:^5}kadar  programlama diline hakimim...".format(5)) => Ben   5  kadar  programlama diline hakimim...
+print ("Ben {:=5}kadar  programlama diline hakimim...".format(5)) => Ben     5kadar  programlama diline hakimim...
+print ("Ben {:+5}kadar  programlama diline hakimim...".format(5)) => Ben    +5kadar  programlama diline hakimim...
 ------------------------------------------------------------------------------------------------------------------------------
 String Formatlama işlemleri.
 🔤 Büyük/Küçük Harf Dönüştürme
