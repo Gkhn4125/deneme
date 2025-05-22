@@ -1,5 +1,9 @@
 ###### Python notlarım ####
 
+print(ord("Ş"))# içerisine yazılan değerin ASCII karakter kodunu verir.
+print(bin(350))#içerisine yazılan değerin kaç bit oldugunu verir.
+print((350).bit_length())#içerisine yazılan değerin kaç bit oldugunu verir. 
+
 PRİNT FONKSİYONLARI
 
 print("wwww",".","gokhanaltay",".","com",sep="") #sep parametresi aralardaki bosluklara etki eder.
@@ -219,3 +223,5 @@ isdigit()	Sadece rakamlardan oluşuyorsa True.
 isalnum()	Harf veya rakamdan oluşuyorsa True.
 isspace()	Sadece boşluk karakterlerinden oluşuyorsa True.
 islower() / isupper()	Harfler tamamen küçük/büyükse True.
+expandtabs() Harfler arası boşlukları ayarlar. \t ile kullanılır.
+------------------------------------------------------------------------------------------------------------------------------
