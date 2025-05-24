@@ -224,8 +224,12 @@ replace(old, new)	Belirli bir alt string’i yenisiyle değiştirir.
 🔗 Bölme ve Birleştirme
 split(sep)	String’i verilen ayırıcıya göre böler, liste döner.
 rsplit(sep)	Sondan başlayarak böler.
-join(iterable)	Listedeki stringleri belirtilen ayırıcıyla birleştirir.
+join(iterable)	Listedeki stringleri belirtilen ayırıcıyla birleştirir./ "-".join(veriitipi)
 🔤 String’in Yapısını Kontrol Etme
+isidentifier() a-z 0-9 ve _ içeriklerini kontrol eder. Sayı ile başlayamaz.
+istitle() Bas harfleri Büyük mü kontrol eder.
+isnumeric() Sadece rakamlardan oluşuyorsa True.
+isprantable() Yazdırılabilir karakterler varsa True Yoksa False (\n  \r \t )
 isalpha()	Sadece harflerden oluşuyorsa True döner.
 isdigit()	Sadece rakamlardan oluşuyorsa True.
 isalnum()	Harf veya rakamdan oluşuyorsa True.
