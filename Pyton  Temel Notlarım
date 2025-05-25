@@ -221,6 +221,19 @@ strip()	Başta ve sondaki boşlukları (veya belirli karakterleri) siler.
 lstrip()	Sadece baştaki boşlukları siler.
 rstrip()	Sadece sondaki boşlukları siler.
 replace(old, new)	Belirli bir alt string’i yenisiyle değiştirir.
+rjust() sağa boşluk bırakmaya yarar.rjust(20)
+ljust() sola boşluk bırakmaya yarar.ljust(20)
+maketrans() bir karakteri başka bir karakterle değiştirir.str.translate()ile birkilte kullanılır. 3 karakter alır 2 si değişir 3. siler
+//////////////////////////////////////////////////////////
+Örn :                                                    /
+kaynak = "abc"                                           /
+hedef = "123"                                            /
+ceviri_tablosu = str.maketrans(kaynak, hedef)            /
+metin = "abcde"                                          /
+yeni_metin = metin.translate(ceviri_tablosu)             /
+print(yeni_metin)  # Çıktı: 123de                        /
+//////////////////////////////////////////////////////////
+partition()Stringi parçalar parantez içerisine ne yazarsan ona göre parçalar.
 🔗 Bölme ve Birleştirme
 split(sep)	String’i verilen ayırıcıya göre böler, liste döner.
 rsplit(sep)	Sondan başlayarak böler.
