@@ -250,3 +250,4 @@ isspace()	Sadece boşluk karakterlerinden oluşuyorsa True.
 islower() / isupper()	Harfler tamamen küçük/büyükse True.
 expandtabs() Harfler arası boşlukları ayarlar. \t ile kullanılır.
 ------------------------------------------------------------------------------------------------------------------------------
+
