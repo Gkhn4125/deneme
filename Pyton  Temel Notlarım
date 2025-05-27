@@ -1,5 +1,7 @@
 ###### Python notlarım ####
 
+####Bir sayının bitsel degerini bulmak için o sayıyı devamlı 2 ye bölünüp kalan değerler alınır...
+
 print(ord("Ş"))# içerisine yazılan değerin ASCII karakter kodunu verir.
 print(bin(350))#içerisine yazılan değerin kaç bit oldugunu verir.
 print((350).bit_length())#içerisine yazılan değerin kaç bit oldugunu verir. 
@@ -249,5 +251,24 @@ isalnum()	Harf veya rakamdan oluşuyorsa True.
 isspace()	Sadece boşluk karakterlerinden oluşuyorsa True.
 islower() / isupper()	Harfler tamamen küçük/büyükse True.
 expandtabs() Harfler arası boşlukları ayarlar. \t ile kullanılır.
-------------------------------------------------------------------------------------------------------------------------------
-
+##################################################################################################################################################################
+OPERATÖRLER
+<  Küçüktür operatörü
+>  Büyüktür operatörü
+== Eşittir operatörü
+!= Eşit Değil operatörü
+<= Küçük eşittir operatörü
+>= Büyük eşittir operatörü
+and operatörü
+or operatörü
+not operatörü
+is operatörü
+is not operatörü
+in operatörü
+not in
+Bitsel operatörler
+<<  6 << 2 ( biti 2 sıra sola kaydır)
+>>  6 >> 2 ( biti 2 sıra sağa kaydır)
+&   6 & 2 ( bitlerin hepsi 1 1 olmalı)
+|   6 | 2 ( bitlerden en bir tane 1 olmalı)
+~   x =~ 245 ( Bir bitin değilini alır Bir fazlasının eksili değerini verir her zaman)
