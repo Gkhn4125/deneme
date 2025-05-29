@@ -272,3 +272,27 @@ Bitsel operatörler
 &   6 & 2 ( bitlerin hepsi 1 1 olmalı)
 |   6 | 2 ( bitlerden en bir tane 1 olmalı)
 ~   x =~ 245 ( Bir bitin değilini alır Bir fazlasının eksili değerini verir her zaman)
+##################################################################################################################################################################
+list VERİ TÜRLERİ
+List [] sıralı , yinelenebilir, değiştirilir.
+tuple() sıralı, yinelenebilir, değiştirilemez.
+set{} sırasız,yinelenemez,değiştirilemez.
+dict{} sıralı, yinelenemez, değiştirilebilir.
+
+list endekslenmiş veri türleridir.
+list = ["Elma","Armut","Karpuz","Portakal"]
+list = [0,1,2,3] #üstteki listenin indekslenmiş halidir.
+
+list = ["Elma","Armut","Karpuz","Portakal","Kavun","Muz","Çilek"]
+list[:]# Bu durumda hepsini seçer ve yarıca listeyi kopyalama içinde kullanılır.
+list[:3]# başalnagıc değerini yazmazsak 0 dan başlar.
+list[0:]# bu durumda başlangıc değerinden sona kadar alır.
+list[:-1]# sondan başlayarak başa doğru gider yani tersten yazar.
+list[-4:-1]# Sondan başlar -1 dahil değil -4 dahildir.
+list[-5:]## bu durumda başlangıc değerinden sona kadar alır.
+------------------------------------------------------------------------------------------------------------------------------
+List metotları 
+list.append() # listeye ekleme yapar
+list.insert()# listeye ekleme yapar farkı indeks ile kullanılır. =====> list.insert(1,"eklenecek değer")
+list.extend() # Listeyi genişletir. iki listeyi birbirine ekler. parantez içerisine eklemek istediğin listeyi yaz.Listenin sonuna ekler
+list.copy() # Listeyi kopyalar.
