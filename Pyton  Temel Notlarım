@@ -90,7 +90,7 @@ x = int(True) bool veri tipleri False 0 a True de 1 e dönüşür. Burada sonuc 
 
 x = float(6) # burada x 6.0 a dönüşür bunun tam tersi olacaksa float int dönecekse oda üste ve ya alta yuvarlar. 6.70 i 7 yapar 6.30 ise 6 yapar.
 
-x= str(7) # Burada sonuc "7" dir.
+x= str(7) # Burada sonuc "7" dir. 
 
 complex() karmaşık sayıya çevirir.Tersinde ise hata verir complex int yada floata dönüştürülemez.
 ##################################################################################################################################################################
@@ -292,7 +292,15 @@ list[-4:-1]# Sondan başlar -1 dahil değil -4 dahildir.
 list[-5:]## bu durumda başlangıc değerinden sona kadar alır.
 ------------------------------------------------------------------------------------------------------------------------------
 List metotları 
+
 list.append() # listeye ekleme yapar
 list.insert()# listeye ekleme yapar farkı indeks ile kullanılır. =====> list.insert(1,"eklenecek değer")
 list.extend() # Listeyi genişletir. iki listeyi birbirine ekler. parantez içerisine eklemek istediğin listeyi yaz.Listenin sonuna ekler
 list.copy() # Listeyi kopyalar.
+list.remove()# Listedeki kaldırmak istedğimiz değeri kaldırır.
+list.pop()# Listedeki son değeri kaldırır. İndeks numarası verilerek te kullanabilir.
+list.clear() # Listeyi siler.
+del # Listdeki komple siler.
+list.index()# Aranan değerin hangi indeks de geçtiğini bulur.
+list.count()# aranan değerin liste içinde kaç kez geçtiğini bulur.
+list.reverse() # Liste sırasını tersine çevirir.
