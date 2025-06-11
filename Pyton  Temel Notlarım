@@ -306,5 +306,16 @@ list.count()# aranan değerin liste içinde kaç kez geçtiğini bulur.
 list.reverse() # Liste sırasını tersine çevirir.
 list.sort() # Liste içerisini sıralar. Küçük Büyük harf duyarlılıgı vardır.Bu durumu ( list.sort(key=str.lower)) şeklinde gecebiliriz. Büyükten Küçüğe de istersek ( list.sort(reverse=True))
 
-list comphersion
-[print(list_adi) for i in list_adi]
+List comprehension
+
+Kalıbı Şu şekildedir.
+
+[ (Her öge için uygulanacak işlem ) for item in (üzerinde döngü yapılacak nesne (list,set,string vs))]
+
+list = [0,1,2,3,4,5]
+new_list = [item for item in list  if item !=2]#2 hariç hepsini yeni listeye eklettik.
+print(new_list)#[0,1,3,4,5]
+
+list = [0,1,2,3,4,5]
+new_list = [item if item!=1 else 2 for item in list]
+print(new_list)#[0, 2, 2, 3, 4, 5]
