@@ -305,3 +305,6 @@ list.index()# Aranan değerin hangi indeks de geçtiğini bulur.
 list.count()# aranan değerin liste içinde kaç kez geçtiğini bulur.
 list.reverse() # Liste sırasını tersine çevirir.
 list.sort() # Liste içerisini sıralar. Küçük Büyük harf duyarlılıgı vardır.Bu durumu ( list.sort(key=str.lower)) şeklinde gecebiliriz. Büyükten Küçüğe de istersek ( list.sort(reverse=True))
+
+list comphersion
+[print(list_adi) for i in list_adi]
