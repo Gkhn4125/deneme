@@ -327,3 +327,12 @@ a = int(input(" Pozitif Bir Sayı Giriniz :"))
 b = int(input(" Pozitif Bir Sayı Giriniz :"))
 
 print(f"{a} sayisi {b} sayisindan büyüktür ") if(a>b) else print(f"{a} sayisi {b} sayisindan Küçüktür") if(a<b) else print(f"{a} sayisi {b} sayisina Eşittir.")
+
+###############################################################################################################################################
+tuple veri tipleri 
+
+
+Değiştirilemez indekslenebilir siralidir ve yinelenebilir 
+
+
+tuple veri eklemek için tuple listee çevrilir list() metotu ile yada başka bir tuple oluşturulur+= ile birbirine eklenir.
