@@ -335,4 +335,7 @@ tuple veri tipleri
 Değiştirilemez indekslenebilir siralidir ve yinelenebilir 
 
 
-tuple veri eklemek için tuple listee çevrilir list() metotu ile yada başka bir tuple oluşturulur+= ile birbirine eklenir.
+tuple veri eklemek için tuple listee çevrilir list() metotu ile yada başka bir tuple oluşturulur += ile birbirine eklenir. 
+Not =  Tek bir veri ekleyeceksek aşağıdaki gibi olmalıdır 
+
+deneme=  (deneme ,)#sona virgül koymamız gerekiyor
