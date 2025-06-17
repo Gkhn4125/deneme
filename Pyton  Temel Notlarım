@@ -329,8 +329,7 @@ b = int(input(" Pozitif Bir Sayı Giriniz :"))
 print(f"{a} sayisi {b} sayisindan büyüktür ") if(a>b) else print(f"{a} sayisi {b} sayisindan Küçüktür") if(a<b) else print(f"{a} sayisi {b} sayisina Eşittir.")
 
 ###############################################################################################################################################
-tuple veri tipleri 
-
+TUPLE VERİ TİPLERİ
 
 Değiştirilemez indekslenebilir siralidir ve yinelenebilir 
 
@@ -339,3 +338,17 @@ tuple veri eklemek için tuple listee çevrilir list() metotu ile yada başka bi
 Not =  Tek bir veri ekleyeceksek aşağıdaki gibi olmalıdır 
 
 deneme=  ("deneme",)#sona virgül koymamız gerekiyor
+###############################################################################################################################################
+SET VERİ TİPLERİ
+Değiştirilemez indekslenemez sirasizdi ve yinelenemez. 
+
+meyveler = {"ELma","Armut","Karpuz","Çilek"}
+meyveler2= {"Portakal","Kayısı"}
+meyveler3 = {"Yenidünya"}
+meyveler.add("Kavun")# Sete veri ekledik
+meyveler.update(meyveler2)# meyveler set yapısını baska bir seti ekledik.Birden Fazla seti ekLeyebiLir.
+meyveler2 |= meyveler3#Update metotunun kısa yolu
+meyveler2 |= meyveler3 | meyveler #Birden fazla olunca bu şekilde 
+print(meyveler2)
+
+
