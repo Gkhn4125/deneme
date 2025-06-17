@@ -340,7 +340,7 @@ Not =  Tek bir veri ekleyeceksek aşağıdaki gibi olmalıdır
 deneme=  ("deneme",)#sona virgül koymamız gerekiyor
 ###############################################################################################################################################
 SET VERİ TİPLERİ
-Değiştirilemez indekslenemez sirasizdi ve yinelenemez. 
+Değiştirilebilir indekslenemez sirasizdir ve yinelenemez. 
 
 meyveler = {"ELma","Armut","Karpuz","Çilek"}
 meyveler2= {"Portakal","Kayısı"}
@@ -349,6 +349,44 @@ meyveler.add("Kavun")# Sete veri ekledik
 meyveler.update(meyveler2)# meyveler set yapısını baska bir seti ekledik.Birden Fazla seti ekLeyebiLir.
 meyveler2 |= meyveler3#Update metotunun kısa yolu
 meyveler2 |= meyveler3 | meyveler #Birden fazla olunca bu şekilde 
-print(meyveler2)
+meyveler.remove("Elma")#ögeyi kaldırır yoksa hata verir.Hata almak istemezsek discard metotu kullanılır.
+meyveler.pop()# Rastgele öge kaldırır.
+meyveler.clear()# setin içerisini boşaltır.
+meyveler.union()#Setleri birleştirir.List ve tupleleri de birleştirebiliriz. | ile de birleştirilir.
+meyveler.intersection()# Setlerin arasında ortak olan değerleri verir. kısa yolu & operatörüdür
+meyveler.intersection_update()#Setlerin arasında ortak olan değerleri verir ama orjinali de değiştirir.Kısa yolu &=
+print(meyveler2[2])
 
+sayilar = {1,2,3,4,5,6}
+sayilar2 = {7,8,9,10,1,4,5}
+
+result = sayilar.difference(sayilar2)#ikincide olmayıp birincide olanları yaz.
+result = sayilar - sayilar2# üsteki metotun kısa yolu 
+print(result)
+
+sayilar = {1,2,3,4,5,6}
+sayilar2 = {7,8,9,10,1,4,5}
+
+sayilar.difference_update(sayilar2)#orjinal setin kendisini değiştirir.
+print(sayilar)#{2, 3, 6} sonuc
+
+sayilar = {1,2,3,4,5,6}
+sayilar2 = {7,8,9,10,1,4,5}
+
+result = sayilar.symmetric_difference(sayilar2)#setler arasında kesişim olmayan değerleri alır.
+print(result)#sonuc {2, 3, 6, 7, 8, 9, 10}
+
+sayilar = {1,2,3,4,5,6}
+sayilar2 = {7,8,9,10,1,4,5}
+
+result = sayilar.isdisjoint(sayilar2)#Ortak değer olup olmadığına bakar varsa sonucu false döndürür.
+print(result)
+
+sayilar = {1,2,3,4,5,6}
+sayilar2 = {7,8,9,10,1,4,5}
+
+result = sayilar.issubset(sayilar2)#Eğer set1 içindeki tüm elemanlar set2 içinde de varsa, sonuç True olur.
+reslt = sayilar.issuperset(sayilar2)#Sayilar2 setinin içindeki tüm ögeler sayilar içerisnde varsa True Yoksa False.
+
+print(result)
 
