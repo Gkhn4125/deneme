@@ -340,7 +340,7 @@ Not =  Tek bir veri ekleyeceksek aşağıdaki gibi olmalıdır
 deneme=  ("deneme",)#sona virgül koymamız gerekiyor
 ###############################################################################################################################################
 SET VERİ TİPLERİ
-Değiştirilebilir indekslenemez sirasizdir ve yinelenemez. 
+Değiştirilemez indekslenemez sirasizdir ve yinelenemez. 
 
 meyveler = {"ELma","Armut","Karpuz","Çilek"}
 meyveler2= {"Portakal","Kayısı"}
@@ -389,4 +389,47 @@ result = sayilar.issubset(sayilar2)#Eğer set1 içindeki tüm elemanlar set2 iç
 reslt = sayilar.issuperset(sayilar2)#Sayilar2 setinin içindeki tüm ögeler sayilar içerisnde varsa True Yoksa False.
 
 print(result)
+###############################################################################################################################################
+DİCT VERİ TİPLERİ
+Değiştirilebilir indekslenemez sirasizdir ve yinelenemez.
 
+arabalar = {
+    "Marka":"Renault",
+    "Model":"Clio",
+    "Yıl": 2000,
+    "Yakıt" : "Benzin",
+    "Motor":0.9,
+    "Renk" : "Beyaz"
+}
+person = dict(ad ="Gökhan",soyad="Altay",yas=37,sehir="Kocaeli")#Kısayoldan dict olusturma
+print(person["ad"])# Çıktısı Gökhan
+print(person.get("sehir"))#get metotu ile de değerlere ulaşabiliriz.
+print(person.keys())#Person dictinin bütün keyslerini verir.
+print(person.values())#Person dictinin bütün değerlerini verir.
+person["Meslek"] = "Depo Formenliği"#Dict e veri ekledik.
+print(person)#{'ad': 'Gökhan', 'soyad': 'Altay', 'yas': 37, 'sehir': 'Kocaeli', 'Meslek': 'Depo Formenliği'}
+person = dict(ad ="Gökhan",soyad="Altay",yas=37,sehir="Kocaeli")#Kısayoldan dict olusturma
+result = person.items()#Sonucu tuple şekilinde verir
+#dict_items([('ad', 'Gökhan'), ('soyad', 'Altay'), ('yas', 37), ('sehir', 'Kocaeli')])
+print(person)
+person.update({"meslek" : "Depo Formenliği"})#Dicte yeni veri ekledik.
+print(person)
+person.pop("meslek")# içerisine verilen key ve valueyi kaldırır.
+print(person)
+person.popitem()#Son eklenen öğeyi kaldırır.
+person.clear()#dict içerisini boşaltılır.
+kisi = {
+    "name" : "Gökhan",
+    "surname":"Altay",
+    "age" : 37,
+    "work" : "Formenlik"
+}
+value = ["a","b","c"]
+keys_s = 7
+result = dict.fromkeys(value,keys_s)#dict olusturur.
+kisi.setdefault()#içerisinde yazılan deger varsa gösterir yoksa yeni bir değer ekler.
+print(result)
+# For Döngüsü kullanımı
+for item_keys,item_values in kisi.items():
+    print(f"{item_keys}:{item_values}")
+###############################################################################################################################################
