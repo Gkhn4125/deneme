@@ -1,1 +1,67 @@
+Fonksiyonlar
 
+def hesapla (x,y,/,*,a,b):#,/ öncesi konumsal arguman al *, den sonrası anahtar sözcük argumanı olarak al 
+    print(x+y+a+b)
+result = hesapla(20,30,a=5,b=8)
+print(result)
+#############################################################
+def hello ():# fonksiyonları döngü ile kullanımı...
+    return "hello patron"
+
+for item in range(7):
+    print(f"{item+1}--{hello()}")
+
+#############################################################
+def square (number):# iç içe Fonksiyon kullanım örnerği...
+    return number**2
+def sum_and_square (x,y):
+    sum_result = x+y
+    return square(sum_result)
+
+result = sum_and_square(7,5)
+print(result)
+
+Basit Bir Hesap MAkinesi Uygulaması
+
+def hesap_makinesi(sayi1, sayi2, islem):
+    try:
+        if islem == "+":
+            return sayi1 + sayi2
+        elif islem == "-":
+            return sayi1 - sayi2
+        elif islem == "*":
+            return sayi1 * sayi2
+        elif islem == "/":
+            return sayi1 / sayi2
+        else:
+            print("Geçerli bir işlem seçiniz.")
+            return None
+    except ZeroDivisionError:
+        print("Hata: Bir sayıyı 0'a bölemezsiniz.")
+        return None
+
+print("=== HESAP MAKİNESİNE HOŞ GELDİNİZ ===")
+print("İşlemler: +  -  *  /")
+print("Çıkmak için 'q' tuşlayınız.\n")
+
+while True:
+    islem = input("Bir işlem seçiniz (+ - * /) veya çıkmak için 'q' : ")
+    
+    if islem.lower() == "q":
+        print("Çıkış yapılıyor...")
+        break
+
+    if islem not in "+-*/":
+        print("Geçersiz işlem seçtiniz. Lütfen tekrar deneyin.")
+        continue
+
+    try:
+        sayi1 = int(input("1. Sayıyı giriniz: "))
+        sayi2 = int(input("2. Sayıyı giriniz: "))
+    except ValueError:
+        print("Lütfen sadece sayı giriniz.\n")
+        continue
+
+    sonuc = hesap_makinesi(sayi1, sayi2, islem)
+    if sonuc is not None:
+        print(f"Sonuç: {sayi1} {islem} {sayi2} = {sonuc}\n")
