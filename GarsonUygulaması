@@ -1,0 +1,120 @@
+import datetime
+
+et_menu = (
+    ("Et Döner", 100),
+    ("Et Izgara", 150),
+    ("Et Fajita", 200),
+    ("Et Haşlama", 300)
+)
+
+tavuk_menu = (
+    ("Tavuk Döner", 100),
+    ("Tavuk Izgara", 150),
+    ("Tavuk Fajita", 200),
+    ("Tavuk Kanat", 300)
+)
+
+icecek_menu = (
+    ("Kola", 25),
+    ("Küçük Boy Ayran", 10),
+    ("Büyük Boy Ayran", 15),
+    ("Fanta", 27),
+    ("Şalgam", 20)
+)
+
+siparisler = []
+toplam_tutar = 0
+masa_no = input("🪑 Masa numarası giriniz: ")
+
+def menu_goster(menu):
+    for urun in menu:
+        print(f"{urun[0]} - {urun[1]} TL")
+
+def siparis_al(menu):
+    global toplam_tutar
+    secim = input("Lütfen ürün adını yazınız: ").title().strip()
+    for urun in menu:
+        if secim == urun[0]:
+            try:
+                adet = float(input("Kaç porsiyon/alım istersiniz? "))
+                if adet <= 0:
+                    print("⚠️ Geçerli bir miktar giriniz.")
+                    return
+                fiyat = adet * urun[1]
+                siparisler.append((urun[0], adet, fiyat))
+                toplam_tutar += fiyat
+                print(f"✅ Sipariş eklendi: {urun[0]} x{adet} = {fiyat:.2f} TL")
+                return
+            except ValueError:
+                print("⚠️ Sayı girmelisiniz.")
+                return
+    print("❌ Geçersiz ürün seçimi.")
+
+def siparis_sil():
+    global toplam_tutar
+    print("🗑️ Sipariş İptali")
+    silinecek = input("Silmek istediğiniz ürünün adını yazınız: ").title().strip()
+    for s in siparisler:
+        if s[0] == silinecek:
+            siparisler.remove(s)
+            toplam_tutar -= s[2]
+            print(f"❌ {s[0]} silindi. Yeni toplam: {toplam_tutar:.2f} TL")
+            return
+    print("🔍 Sipariş bulunamadı.")
+
+def hesap_yazdir():
+    print("\n🧾 SİPARİŞ FİŞİ")
+    now = datetime.datetime.now()
+    print(f"Tarih: {now.strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"Masa No: {masa_no}")
+    print("-" * 30)
+    for s in siparisler:
+        print(f"{s[0]} x{s[1]} = {s[2]:.2f} TL")
+    print("-" * 30)
+    print(f"Toplam Tutar: {toplam_tutar:.2f} TL\n")
+
+    # Dosyaya yaz
+    with open(f"masa_{masa_no}_fiş.txt", "w", encoding="utf-8") as f:
+        f.write(f"Garson V3.0 Sipariş Fişi\n")
+        f.write(f"Tarih: {now.strftime('%Y-%m-%d %H:%M:%S')}\n")
+        f.write(f"Masa No: {masa_no}\n")
+        f.write("-" * 30 + "\n")
+        for s in siparisler:
+            f.write(f"{s[0]} x{s[1]} = {s[2]:.2f} TL\n")
+        f.write("-" * 30 + "\n")
+        f.write(f"Toplam Tutar: {toplam_tutar:.2f} TL\n")
+
+    print(f"💾 Siparişler 'masa_{masa_no}_fiş.txt' dosyasına kaydedildi.")
+
+# Ana Menü Döngüsü
+while True:
+    print("\nMenüler: [et / tavuk / içecek / hesap / sil / çıkış]")
+    secim = input("Menü seçiniz: ").lower().strip()
+
+    if secim == "et":
+        print("\n🥩 ET MENÜSÜ:")
+        menu_goster(et_menu)
+        siparis_al(et_menu)
+
+    elif secim == "tavuk":
+        print("\n🍗 TAVUK MENÜSÜ:")
+        menu_goster(tavuk_menu)
+        siparis_al(tavuk_menu)
+
+    elif secim == "içecek":
+        print("\n🥤 İÇECEK MENÜSÜ:")
+        menu_goster(icecek_menu)
+        siparis_al(icecek_menu)
+
+    elif secim == "hesap":
+        hesap_yazdir()
+
+    elif secim == "sil":
+        siparis_sil()
+
+    elif secim == "çıkış":
+        print("👋 Çıkış yapılıyor. Afiyet olsun!")
+        break
+
+    else:
+        print("⚠️ Geçerli bir menü seçiniz.")
