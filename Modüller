@@ -1,0 +1,20 @@
+import locale
+from datetime import datetime
+
+result =datetime.now()# şu andaki zamanı gösterir
+result2 = datetime(1987,8,26,19,00)# Tarihi kendimiz olusturduk.
+result3= datetime.today()#Buda şimdiki zamanı verir.
+print(datetime.weekday(result3))#Haftanın hangi günü oldugunu gösterir 0 dan baslar.
+print(datetime.ctime(result3))#Tarihi detaylı yazar
+print(result.strftime("%j"))
+
+locale.setlocale(locale.LC_TIME,"tr-TR.UTF-8")# Türkçe saat dilimini gösterir
+my_date= datetime.now()
+print(my_date.strftime("%A %B"))
+
+text = "28 September 2005 hour 14:35:21"
+my_day = datetime.strptime(text, "%d %B %Y hour %H:%M:%S")
+print(my_day)
+
+datee = datetime.now()
+print(datee.timestamp())#zaman damgası 1970 den günümüze geLen zaman aralığıdır.
