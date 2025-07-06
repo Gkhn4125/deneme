@@ -65,3 +65,79 @@ while True:
     sonuc = hesap_makinesi(sayi1, sayi2, islem)
     if sonuc is not None:
         print(f"Sonuç: {sayi1} {islem} {sayi2} = {sonuc}\n")
+#####################################################################################################################
+🧩 Decorator Nedir?
+Decorator, bir fonksiyonu başka bir fonksiyonla sarmalayarak ona yeni özellikler kazandıran yapıdır.
+
+Fonksiyonlara dinamik olarak davranış eklemek için kullanılır.
+
+Python'da @ sembolü ile kullanılır.
+
+🧠 Neden Kullanılır?
+Kod tekrarını azaltmak
+
+Loglama, yetkilendirme, zaman ölçümü gibi işlemleri fonksiyonlara eklemek
+
+Daha okunabilir ve modüler kod yazmak
+
+def decarator_func(func):
+    def wrap_func(*args,**kargs):
+        print(f"{func.__name__} fonksiyonu çağrıldı...")
+        result = func(*args,**kargs)
+        print(f"{func.__name__} fonksiyonu tamamlandı...")
+        return result
+    return wrap_func
+@decarator_func
+def selamla(name):
+    print(f"Merhaba {name}")
+selamla("Gökhan")
+#-------------------------------------------#
+def admin_gerekli(func):
+    def wrapper(kullanici):
+        if kullanici != "admin":
+            print("Erişim reddedildi.")
+            return
+        return func(kullanici)
+    return wrapper
+
+@admin_gerekli
+def panel_ac(kullanici):
+    print(f"{kullanici} paneli açtı.")
+
+panel_ac("admin")  # ✅
+panel_ac("guest")  # ❌
+
+#-----------------------------------------------
+import time
+
+def zaman_olc(func):
+    def wrapper(*args, **kwargs):
+        basla = time.time()
+        sonuc = func(*args, **kwargs)
+        bitir = time.time()
+        print(f"Çalışma süresi: {bitir - basla:.4f} saniye")
+        return sonuc
+    return wrapper
+
+@zaman_olc
+def bekle():
+    time.sleep(2)
+
+bekle()
+#------------------------------------------------------------------
+def tekrar_dene(func):
+    def wrapper(*args, **kwargs):
+        for _ in range(3):
+            try:
+                return func(*args, **kwargs)
+            except Exception as e:
+                print(f"Hata oluştu: {e}, tekrar deneniyor...")
+    return wrapper
+
+@tekrar_dene
+def hata_veren_fonksiyon():
+    raise ValueError("Bir şeyler ters gitti!")
+
+hata_veren_fonksiyon()
+
+
