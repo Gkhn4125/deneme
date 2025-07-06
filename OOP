@@ -1,0 +1,11 @@
+class cars:
+    def __init__(self,marka,model,renk):
+        self.marka = marka
+        self.model = model
+        self.renk = renk
+
+araba1=cars("Renault","Clio","Beyaz")
+araba2=cars("Honda","Civic","Metalik Gri")
+
+print(f"Seçtiğiniz Araba'nın Markası : {araba1.marka}, Modeli {araba1.model} Rengi : {araba1.renk}'dir...")
+print(f"Seçtiğiniz Araba'nın Markası : {araba2.marka}, Modeli {araba2.model} Rengi : {araba2.renk}'dir...")
