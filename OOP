@@ -9,3 +9,19 @@ araba2=cars("Honda","Civic","Metalik Gri")
 
 print(f"Seçtiğiniz Araba'nın Markası : {araba1.marka}, Modeli {araba1.model} Rengi : {araba1.renk}'dir...")
 print(f"Seçtiğiniz Araba'nın Markası : {araba2.marka}, Modeli {araba2.model} Rengi : {araba2.renk}'dir...")
+
+###########################################################################################################3
+İnherit Miras alma işlemi
+
+class Personel ():
+    def __init__(self,ad,soyad):
+        self.ad = ad
+        self.soyad=soyad
+        
+class Akademik_personel(Personel):#İnherit miras alma işlemi
+    def __init__(self,ad,soyad,görev):# Bunu üstten al ve eklencek variable de ekle (görev) gibi
+        super().__init__(ad,soyad)#Bunu ebeveyn sınıftan çektik
+        self.görev=görev#Bunu yeni ekledik
+
+akademikPersonel=Akademik_personel("Gökhan","Altay","İdari İşler")
+print(f"{akademikPersonel.ad}-{akademikPersonel.soyad}-{akademikPersonel.görev}")
