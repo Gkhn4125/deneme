@@ -25,3 +25,22 @@ class Akademik_personel(Personel):#İnherit miras alma işlemi
 
 akademikPersonel=Akademik_personel("Gökhan","Altay","İdari İşler")
 print(f"{akademikPersonel.ad}-{akademikPersonel.soyad}-{akademikPersonel.görev}")
+###########################################################################################################3
+Miras alma işleminde alt class içerisine miras aldıgın fonksiyon ile ana class ila aynı ise ebeveyn class dan aldıgın fonksiyonu ezer.
+
+class Animal():
+    def __init__(self,name,alive):
+        self.name=name
+        self.alive=alive
+    def cat(self):
+        print(f"{self.name} is eating")
+    def sleep(self):
+        print(f"{self.sleep} is sleeping")
+
+class Dog(Animal):
+    pass
+class Cat (Animal):
+    pass
+class Rabbit(Animal):
+    def sleep(self):
+        print(f"{self.sleep} not is sleeping")#metot ezdik.
