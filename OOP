@@ -44,3 +44,138 @@ class Cat (Animal):
 class Rabbit(Animal):
     def sleep(self):
         print(f"{self.sleep} not is sleeping")#metot ezdik.
+################################################################################################################
+Magic (Sihirli Metotlar)
+İçeriğe geç
+Sohbet geçmişi
+
+Şunu dedin:
+python da magic metotlar hakkında bilgi verebilir misin basit ama içeriği güzel bir şekilde
+ChatGPT:
+Tabii! Python’da magic methods (veya dunder methods) denen sihirli metotlar, özel isimlendirilmiş metotlardır. Asıl isimleri “double underscore methods” (çift alt çizgi) çünkü genellikle iki alt çizgiyle başlar ve biterler: __init__, __str__, __len__ gibi.
+
+Bu metotlar, Python’daki bazı özelleştirilmiş davranışları tanımlamana olanak verir. Örneğin:
+
+nesne oluşturulurken
+
+toplama, çıkarma gibi operatörler çalıştırılırken
+
+nesne stringe çevrilirken
+
+koleksiyon gibi davranması istenirken
+
+Bazı Önemli Magic Methods
+1. __init__
+Nesne ilk oluşturulduğunda çağrılır.
+
+class Kisi:
+    def __init__(self, isim, yas):
+        self.isim = isim
+        self.yas = yas
+
+ali = Kisi("Ali", 25)
+print(ali.isim)  # Ali
+2. __str__
+print() veya str() çağrıldığında dönecek insan-okur biçimindeki yazıyı belirler.
+
+class Kisi:
+    def __init__(self, isim):
+        self.isim = isim
+
+    def __str__(self):
+        return f"Kişinin Adı: {self.isim}"
+
+ali = Kisi("Ali")
+print(ali)  # Kişinin Adı: Ali
+3. __repr__
+Nesnenin temsilini verir. Geliştirici dostudur, debug sırasında iş görür.
+
+class Kisi:
+    def __init__(self, isim):
+        self.isim = isim
+
+    def __repr__(self):
+        return f"Kisi('{self.isim}')"
+
+ali = Kisi("Ali")
+print(repr(ali))  # Kisi('Ali')
+4. __len__
+len() çağrıldığında devreye girer.
+
+class Kitap:
+    def __init__(self, sayfa_sayisi):
+        self.sayfa_sayisi = sayfa_sayisi
+
+    def __len__(self):
+        return self.sayfa_sayisi
+
+k = Kitap(300)
+print(len(k))  # 300
+5. __add__
++ operatörünü özelleştirir.
+
+class Sayac:
+    def __init__(self, deger):
+        self.deger = deger
+
+    def __add__(self, diger):
+        return Sayac(self.deger + diger.deger)
+
+    def __str__(self):
+        return str(self.deger)
+
+a = Sayac(10)
+b = Sayac(20)
+c = a + b
+print(c)  # 30
+6. __getitem__, __setitem__
+Bir nesneyi liste/dictionary gibi erişilebilir yapmak için.
+
+class Koleksiyon:
+    def __init__(self):
+        self.veri = {}
+
+    def __setitem__(self, anahtar, deger):
+        self.veri[anahtar] = deger
+
+    def __getitem__(self, anahtar):
+        return self.veri[anahtar]
+
+k = Koleksiyon()
+k["renk"] = "mavi"
+print(k["renk"])  # mavi
+7. __call__
+Bir nesneyi fonksiyon gibi çağırmanı sağlar.
+
+class Selam:
+    def __call__(self, isim):
+        return f"Merhaba, {isim}!"
+
+s = Selam()
+print(s("Ali"))  # Merhaba, Ali!
+8. __del__
+Nesne yok edilirken (ör. program kapanırken) çağrılır.
+
+class Dosya:
+    def __del__(self):
+        print("Dosya kapatılıyor...")
+
+d = Dosya()
+del d
+# Çıktı: Dosya kapatılıyor...
+Neden Magic Methods Kullanılır?
+✅ Kod daha kısa, temiz ve Python’a daha uyumlu olur.
+✅ Kendi sınıflarını Python’un yerleşik davranışlarıyla uyumlu hâle getirirsin.
+✅ Operatörleri ve fonksiyonları (len, str vs.) özelleştirebilirsin.
+
+Örneğin kendi sınıfını bir sayı gibi toplamak, bir liste gibi erişmek, print ile güzel basmak istersen magic metotlar harika araçlardır.
+
+Magic metotlar, Python’da objelerin arkasındaki büyüyü sağlar. Böylece senin yazdığın sınıflar, dilin doğal bir parçası gibi davranır.
+
+Başka bir magic method örneği veya belirli kullanım görmek ister misin?
+
+
+
+
+Dosya seçilmediDosya seçilmedi
+ChatGPT hata yapabilir. Önemli bilgileri kontrol edin.
