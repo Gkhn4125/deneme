@@ -179,3 +179,10 @@ Başka bir magic method örneği veya belirli kullanım görmek ister misin?
 
 Dosya seçilmediDosya seçilmedi
 ChatGPT hata yapabilir. Önemli bilgileri kontrol edin.
+
+###########################################################################################################3
+Encaplütasiyon - Kapsülleme
+
+public Herkese Açık
+protected Sınıf ve alt sınıflardan ulaşılır _ ile belitilir
+private sadce class içerisinden erişilir. __ile belirtilir.
