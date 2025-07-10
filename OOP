@@ -186,3 +186,69 @@ Encaplütasiyon - Kapsülleme
 public Herkese Açık
 protected Sınıf ve alt sınıflardan ulaşılır _ ile belitilir
 private sadce class içerisinden erişilir. __ile belirtilir.
+
+
+örnekler 
+
+class Calisan:
+    def __init__(self, maas):
+        self.__maas = maas
+
+    def maas_goster(self):
+        return self.__maas
+
+class Mudur(Calisan):
+    def zam_yap(self, oran):
+        # self.__maas += self.__maas * oran  # HATA! __maas gizlidir.
+        # Doğrusu:
+        yeni_maas = self.maas_goster() * (1 + oran)
+        print(f"Yeni maaş: {yeni_maas}")
+
+m = Mudur(5000)
+m.zam_yap(0.1)  # Yeni maaş: 5500.0
+
+
+class Sepet:
+    def __init__(self):
+        self.__urunler = []
+
+    def urun_ekle(self, urun):
+        if isinstance(urun, str) and urun:
+            self.__urunler.append(urun)
+        else:
+            print("Geçersiz ürün ismi.")
+
+    def sepeti_goster(self):
+        return self.__urunler
+
+# Kullanım
+s = Sepet()
+s.urun_ekle("Laptop")
+s.urun_ekle("")
+print(s.sepeti_goster())    # ['Laptop']
+
+
+class Ogrenci:
+    def __init__(self, isim, not_ort):
+        self.__isim = isim
+        self.__not_ort = not_ort
+
+    @property
+    def not_ort(self):
+        return self.__not_ort
+
+    @not_ort.setter
+    def not_ort(self, deger):
+        if 0 <= deger <= 100:
+            self.__not_ort = deger
+        else:
+            print("Not ortalaması 0-100 arasında olmalıdır.")
+
+# Kullanım
+ogr = Ogrenci("Zeynep", 85)
+print(ogr.not_ort)         # 85
+
+ogr.not_ort = 92
+print(ogr.not_ort)         # 92
+
+ogr.not_ort = -10         # Not ortalaması 0-100 arasında olmalıdır.
