@@ -252,3 +252,86 @@ ogr.not_ort = 92
 print(ogr.not_ort)         # 92
 
 ogr.not_ort = -10         # Not ortalaması 0-100 arasında olmalıdır.
+###########################################################################################################3
+Abstcract class ( Soyut Sınıf)
+Python'da abstract method (soyut metot), bir sınıf içinde tanımlanır ama gövdesi (içeriği) yazılmaz. Alt sınıfların bu metodu mutlaka override (üstüne yazmak) etmesi gerekir. Abstract method'lar abc (Abstract Base Classes) modülü kullanılarak tanımlanır.
+
+İşte basit bir örnek:
+
+from abc import ABC, abstractmethod
+
+# Soyut sınıf tanımı
+class Sekil(ABC):
+    
+    @abstractmethod
+    def alan(self):
+        pass
+
+    @abstractmethod
+    def cevre(self):
+        pass
+
+# Somut sınıf (soyut metotları override etmek zorunda)
+class Dikdortgen(Sekil):
+    def __init__(self, genislik, yukseklik):
+        self.genislik = genislik
+        self.yukseklik = yukseklik
+
+    def alan(self):
+        return self.genislik * self.yukseklik
+
+    def cevre(self):
+        return 2 * (self.genislik + self.yukseklik)
+
+# Kullanım
+d = Dikdortgen(5, 10)
+print("Alan:", d.alan())
+print("Çevre:", d.cevre())
+
+Önemli Noktalar:
+Sekil sınıfı bir soyut sınıftır (çünkü ABC sınıfından türemiştir).
+
+@abstractmethod dekoratörü, o metodun alt sınıflarda tanımlanmasını zorunlu kılar.
+
+Python’da duck typing şu anlama gelir: Bir nesnenin türüne değil, o nesnenin hangi metotlara veya özelliklere sahip olduğuna bakarak işlem yapmak.
+
+Adını “Eğer bir kuş gibi yürüyorsa, kuş gibi ötüyorsa, o zaman kuştur” (If it walks like a duck and quacks like a duck, then it’s a duck) sözünden alır.
+
+Duck Typing’in Temeli:
+Python’da tür kontrolü yapmak yerine, nesnenin ihtiyacınız olan davranışı (method/property) sergileyip sergilemediğine bakarsınız.
+
+
+class Ordek:
+    def uc(self):
+        print("Ordek uçuyor")
+
+class Kus:
+    def uc(self):
+        print("Kuş uçuyor")
+
+def ucus_testi(hayvan):
+    hayvan.uc()  # Burada tip kontrolü yok, sadece uc metodu var mı diye davranışa bakılıyor
+
+ork = Ordek()
+kus = Kus()
+
+ucus_testi(ork)  # Ordek uçuyor
+ucus_testi(kus)  # Kuş uçuyor
+------------------------------------------------------------------------------------------------
+class Araba:
+    def hareket_et(self):
+        print("Araba gidiyor")
+
+class Bisiklet:
+    def hareket_et(self):
+        print("Bisiklet sürülüyor")
+
+def hareket_et_test(obj):
+    obj.hareket_et()
+
+araba = Araba()
+bisiklet = Bisiklet()
+
+hareket_et_test(araba)    # Araba gidiyor
+hareket_et_test(bisiklet) # Bisiklet sürülüyor
+
