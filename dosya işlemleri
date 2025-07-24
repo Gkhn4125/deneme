@@ -1,0 +1,4 @@
+f= open ("deneme.txt",r)#Dosyayı okuma modunda açıyor.dosya yoksa hata verir(enconding=utf-8 modu türkçe karakterleri okumak için yazılır.
+f= open ("deneme.txt",w)#Dosyayı yazma modunda açıyor.yoksa olusturur.
+f= open ("deneme.txt",a)#Dosyaya ekleme  modunda açıyor
+f= open ("deneme.txt",x)#Dosyaya oluşturma  modunda açıyor
