@@ -1,0 +1,87 @@
+/* 
+ ?operatörler 
+ + operatörü: iki sayıyı toplar. Örnek: 5 + 3 = 8
+ - operatörü: iki sayıyı birbirinden çıkarır. Örnek: 5 - 3 = 2  
+ * operatörü: iki sayıyı çarpar. Örnek: 5 * 3 = 15
+ / operatörü: iki sayıyı birbirine böler. Örnek: 6 / 3 = 2
+ % operatörü: iki sayının bölümünden kalanı verir. Örnek: 5 % 2 = 1
+ ** operatörü: bir sayının üssünü alır. Örnek: 2 ** 3 = 8
+
+ atama operatörleri
+ = : sağdaki değeri soldaki değişkene atar. Örnek: a = 5
+ += : sağdaki değeri soldaki değişkene ekler ve sonucu soldaki değişkene atar. Örnek: a += 3 (a = a + 3)
+ -= : sağdaki değeri soldaki değişkene çıkarır ve sonucu soldaki değişkene atar. Örnek: a -= 3 (a = a - 3)
+ *= : sağdaki değeri soldaki değişkene çarpar ve sonucu soldaki değişkene atar. Örnek: a *= 3 (a = a * 3)
+ /= : sağdaki değeri soldaki değişkene böler ve sonucu soldaki değişkene atar. Örnek: a /= 3 (a = a / 3)
+ %= : sağdaki değeri soldaki değişkene böler ve kalanı soldaki değişkene atar. Örnek: a %= 3 (a = a % 3)
+ **= : sağdaki değeri soldaki değişkene üs olarak alır ve sonucu soldaki değişkene atar. Örnek: a **= 3 (a = a ** 3)
+ ??= : sağdaki değeri soldaki değişkene atar, eğer soldaki değişken null veya undefined ise. Örnek: a ??= 5 (a = a ?? 5)
+⚠️ + operatörü sayı + string = string birleştirir: 5 + "3" = "53"
+✅ ++a önce artırır, a++ sonra artırır!
+
+karşılaştırma operatörleri
+== : eşit mi? Örnek: 5 == "5" true
+=== : hem değer hem de tip eşit mi? Örnek: 5 === "5" false // her zaman === kullanın
+!= : eşit değil mi? Örnek: 5 != "5" false
+!== : hem değer hem de tip eşit değil mi? Örnek: 5 !== "5" true
+< : soldaki değer sağdakinden küçük mü? Örnek: 5 < 3 false
+> : soldaki değer sağdakinden büyük mü? Örnek: 5 > 3 true
+<= : soldaki değer sağdakine eşit veya küçük mü? Örnek: 5 <= 3 false
+>= : soldaki değer sağdakine eşit veya büyük mü? Örnek: 5 >= 3 
+
+== vs === — Çok Önemli Fark!
+Loose Equality (==) tip dönüşümü yaparak karşılaştırır:
+Strict Equality (===) hem tip hem değerin aynı olmasını ister:
+💡 Altın Kural: JavaScript'te her zaman === ve !== kullanın. == ve != beklenmedik tip dönüşümlerine yol açabilir!
+
+mantıksal operatörler
+&& : ve operatörü. Örnek: true && false = false
+|| : veya operatörü. Örnek: true || false = true
+! : değil operatörü. Örnek: !true = false // boolean değerleri tersine çevirir
+
+bitsel operatörler //Sayıları 32-bit ikili (binary) olarak işleyerek bit düzeyinde işlem yapar:
+& : ve operatörü. Örnek: 5 & 3 = 1
+| : veya operatörü. Örnek: 5 | 3 = 7
+^ : özel veya operatörü. Örnek: 5 ^ 3 = 6
+~ : değil operatörü. Örnek: ~5 = -6
+>> : sağa kaydırma operatörü. Örnek: 5 >> 1 = 2
+<< : sola kaydırma operatörü. Örnek: 5 << 1 = 10
+
+tenary operatör
+? : koşullu operatör. Örnek: (5 > 3) ? "Doğru" : "Yanlış" // Doğru
+spread operatör
+... : bir diziyi veya nesneyi açar. Örnek: let arr = [1, 2, 3];
+, birden fazla parametre alan fonksiyonlarda kullanılabilir ,son değeri döndürür .Örnek: function sum(...numbers) { return numbers.reduce((a, b) => a + b, 0); } // sum(1, 2, 3) = 6
+.? : optional chaining operatörü. Güvenli özellik erişimi sağlar, undefined veya null ise hata vermez:
+
+*/
+
+// Değişkenler ve atama
+let puan = 100;
+puan += 50;  // 150
+
+// Karşılaştırma ve mantıksal
+let gecerNot = puan >= 60;
+let katildi = true;
+let basarili = gecerNot && katildi;  // true
+
+// Ternary ile durum belirleme
+let durum = basarili ? "Geçti" : "Kaldı";
+
+// Nullish coalescing ile varsayılan değer
+let ogrenciAdi = null;
+let gorunenAd = ogrenciAdi ?? "İsimsiz Öğrenci";
+
+// Optional chaining ile güvenli erişim
+let ogrenci = { 
+  notlar: [85, 90, 78],
+  adres: { sehir: "Ankara" }
+};
+let sonNot = ogrenci?.notlar?.[2];        // 78
+let ulke = ogrenci?.adres?.ulke ?? "Türkiye";  // "Türkiye"
+
+// Çıktı
+console.log(`Öğrenci: ${gorunenAd}`);
+console.log(`Durum: ${durum}`);
+console.log(`Son not: ${sonNot}`);
+console.log(`Ülke: ${ulke}`);
