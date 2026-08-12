@@ -1,0 +1,25 @@
+/* Dialog Kutuları 
+
+alert() - Uyarı kutusu
+confirm() - Onay kutusu // kullanıcıdan evet veya hayır cevabı alır. Evet için true, hayır için false döndürür.
+prompt() - Girdi kutusu // Her zaman string değer döndürür...
+
+alert()   → 📢 "Sana bir şey söylüyorum."
+
+prompt()  → ❓ "Sana bir şey soruyorum."
+
+confirm() → ✅❌ "Bunu yapmak istediğine emin misin?"
+
+Not : Yerleşik dialog kutuları yerine modern diyalog kutuları kullanmak daha iyi bir kullanıcı deneyimi sağlar. Örneğin, SweetAlert2 veya Bootstrap Modal gibi kütüphaneler kullanılabilir.
+
+
+*/
+alert("Site şiddet unsurları içerir.");
+confirm(" 18 yasından büyük müsünüz ? . Devam etmek istiyor musunuz?");
+prompt("Bu bir girdi kutusudur. Lütfen bir değer giriniz.");
+
+
+let isim = prompt("Adınızı girin:", "Misafir");//İki parametre alır: prompt(mesaj, varsayilanDeger)
+if (isim !== null) {
+    console.log("Merhaba, " + isim);
+}
