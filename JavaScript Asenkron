@@ -1,0 +1,15 @@
+console.log("Gökhan")
+
+setTimeout(() => {
+    console.log("10 saniye sonra çalışacak") // 1 saniye sonra çalışacak
+}, 1000);
+
+setTimeout(() => {
+    console.log("5 saniye sonra çalışacak") // 0.5 saniye sonra çalışacak
+}, 500);
+
+setTimeout(() => {
+    console.log("1 saniye sonra çalışacak") // 0.75 saniye sonra çalışacak
+}, 750);
+console.log("Altay")
+------------------------------------------------------------------------------------------------
