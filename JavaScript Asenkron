@@ -13,3 +13,36 @@ setTimeout(() => {
 }, 750);
 console.log("Altay")
 ------------------------------------------------------------------------------------------------
+
+/*
+callback  asynchronous bir şekilde çalışır. Yani bir fonksiyonun bitmesini beklemeden diğer fonksiyon çalışır. Bu yüzden getSurname() fonksiyonu getName() fonksiyonundan önce çalışır ve ekrana "Altay" yazdırır.
+ */
+
+
+function getName(callback){
+    setTimeout(() => {
+    let name = "Gökhan"
+    callback(name)
+    },1000)
+}
+
+function getSurname(name, callback){
+    setTimeout(() => {
+        let surname = "Altay"
+        callback(name, surname)
+    }, 500)
+}
+function getAge(name, surname, callback){
+    setTimeout(() => {
+        let age = 30
+        callback(name, surname, age)
+    }, 500)
+}
+
+getName((name) => {
+    getSurname(name, (name, surname) => {
+        getAge(name, surname, (name, surname, age) => {
+            console.log(name, surname, age);
+        });
+    });
+});
