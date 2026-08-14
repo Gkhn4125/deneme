@@ -46,3 +46,28 @@ getName((name) => {
         });
     });
 });
+-------------------------------------------------------------------------------
+
+/* 
+AJAX (Asynchronous JavaScript and XML) tarayıcıdan arka plandan veri almaya yarayan mekanizma....
+
+*/
+function getData(url,id) {
+    if(id === null) {
+        return url;
+    }
+    return `${url}/${id}`;
+}
+
+function getComments(url,id) {
+    let Newurl = getData(url,id);
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener('readystatechange', () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log(JSON.parse(xhr.responseText));
+        }
+    });
+    xhr.open('GET', Newurl);
+    xhr.send();
+}
+getComments('https://jsonplaceholder.typicode.com/posts', null);
