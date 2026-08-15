@@ -71,3 +71,65 @@ function getComments(url,id) {
     xhr.send();
 }
 getComments('https://jsonplaceholder.typicode.com/posts', null);
+
+------------------------Promise Konusu-----------------------------
+/* promise */
+const condition = true; // Change this to false to test rejection
+
+const promise = new Promise((resolve, reject) => {
+    if (condition) {
+        resolve("Promise Başarılı!");
+    } else {
+        reject("Promise Başarısız !");
+    }
+});
+console.log(promise);
+
+
+
+let cehck = true; // Change this to false to test rejection
+
+function myPromise() {
+    return new Promise((resolve, reject) => {
+        if (cehck) {
+            resolve("Promise Başarılı!");
+        } else {
+            reject("Promise Başarısız !");
+        }
+    });
+}
+
+myPromise()
+    .then((result) => {
+        console.log(result);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+function ReadStudents(url) {
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        try {
+            xhr.addEventListener("readystatechange", () => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        resolve(JSON.parse(xhr.responseText));
+                    }
+                }
+            });
+            xhr.open("GET", url);
+            xhr.send();
+        } catch (error) {
+            reject(error);
+        }
+    });
+}
+
+ReadStudents("students.json")
+    .then((data) => {
+        console.log(data);
+    })
+    .catch((error) => {
+        console.error(error);
+    });
